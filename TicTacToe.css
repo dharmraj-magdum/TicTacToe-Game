@@ -1,0 +1,118 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	width: 100%;
+	height: 90vh;
+	font-family: "Courier New", Courier, monospace;
+	background-color: #eee;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+}
+.main-container {
+	/* width: 50vw; */
+	width: 80%;
+	height: 80%;
+	display: flex;
+	/* align-items: center; */
+	justify-content: center;
+	margin: 3rem auto;
+	gap: 1rem;
+}
+h1 {
+	font-size: 2.5rem;
+	color: #555;
+	padding: 0;
+	margin: 2rem auto 0.5rem auto;
+}
+h2 {
+	font-size: 2rem;
+	color: #2c22af;
+	margin: 15px;
+	padding: 15px auto;
+}
+h2 span {
+	font-size: 2.5rem;
+	color: #3333ff;
+}
+.stat {
+	margin-top: 10%;
+	width: 30%;
+}
+#cell-container {
+	height: 100%;
+	aspect-ratio: 1/1;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: repeat(3, 1fr);
+	grid-gap: 5px;
+	justify-content: space-around;
+}
+.cell {
+	width: 100%;
+	height: 100%;
+	aspect-ratio: 1/1;
+	cursor: pointer;
+	border: 2px solid #506f84;
+	font-size: 5rem;
+	text-align: center;
+	line-height: 145px;
+}
+.X {
+	color: #f451bb;
+	pointer-events: none;
+}
+.O {
+	color: #972fd8;
+	pointer-events: none;
+}
+.cell:hover {
+	background-color: rgb(133, 204, 194);
+}
+.matched {
+	position: relative;
+	color: #fa2161;
+	background-color: #aaffae;
+	border: 2px solid #11af1a;
+	animation: match 1s linear infinite;
+	overflow: hidden;
+}
+@keyframes match {
+	0% {
+		transform: translate(-3%, 3%) rotate(-3deg);
+	}
+	25% {
+		transform: translate(0%, 0%) rotate(0deg);
+	}
+	50% {
+		transform: translate(-2%, 3%) rotate(3deg);
+	}
+	75% {
+		transform: translate(0%, 0%) rotate(0deg);
+	}
+	100% {
+		transform: translate(-3%, 3%) rotate(-3deg);
+	}
+}
+#restart {
+	margin-top: 4rem;
+	padding: 1rem 2rem;
+	font-size: 1.5rem;
+	color: #222;
+	border-radius: 5px;
+	cursor: pointer;
+	outline: none;
+	border: 1px solid #777;
+	background-color: #999;
+}
+#restart.hide {
+	display: none;
+}
+#restart:hover {
+	color: #111;
+	background-color: #bbb;
+}
